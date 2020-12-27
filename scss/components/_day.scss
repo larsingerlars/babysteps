@@ -1,13 +1,12 @@
 .birdcage {
   display: none;
-  height: 100%;
-  overflow: hidden;
+  height: 50rem;
   position: absolute;
   width: 100%;
+  top: 15%;
   z-index: -1;
 }
 .pictureframe {
-  height: 100%;
   left: -60%;
   position: absolute;
   top: 0;
@@ -16,8 +15,7 @@
 
 .pictureframe:nth-of-type(1) {
   animation: fly 30s infinite linear;
-  height: 200px;
-  left: -60%;
+  height: 50px;
 
   @include respond(tab-port) {
     animation: fly 180s infinite linear;
@@ -25,29 +23,29 @@
 }
 
 .pictureframe:nth-of-type(2) {
-  animation: fly 28s 1s infinite linear;
+  animation: fly 30s 1s infinite linear;
   height: 300px;
 
   @include respond(tab-port) {
-    animation: fly 177s 2s infinite linear;
+    animation: fly 180s 1s infinite linear;
   }
 }
 
 .pictureframe:nth-of-type(3) {
   animation: fly 30s 2s infinite linear;
-  height: 400px;
+  height: 200px;
 
   @include respond(tab-port) {
-    animation: fly 175s 1s infinite linear;
+    animation: fly 180s 2s infinite linear;
   }
 }
 
 .pictureframe:nth-of-type(4) {
-  animation: fly 25s 3s infinite linear;
-  height: 300px;
+  animation: fly 30s 3s infinite linear;
+  height: 50px;
 
   @include respond(tab-port) {
-    animation: fly 172s 2s infinite linear;
+    animation: fly 180s 3s infinite linear;
   }
 }
 
