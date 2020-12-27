@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 50%;
+  font-display: optional;
+  overflow: hidden;
+
+  @include respond(tab-port) {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  background: rgb(255, 255, 255);
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
