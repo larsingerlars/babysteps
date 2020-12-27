@@ -9,7 +9,7 @@
     "concat:css": "concat -o css/main.concat.css css/icon-font.css css/main.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 10 version\" css/main.comp.css -o css/main.prefix.css",
     "compress:css": "sass css/main.prefix.css css/main.min.css --style compressed",
-    "build:css": "npm-run-all compile:scss prefix:css compress:css",
+    "build:css": "npm-run-all compile:scss compress:css",
     "minify:js": "uglifyjs scripts/script.js --compress --output scripts/script.min.js"
   },
   "author": "Lars",

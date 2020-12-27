@@ -555,7 +555,7 @@ footer .link .github:hover {
 
 .bg {
   background-color: rgba(68, 204, 238, 0.75);
-  background-image: url("/ressources/img/bg_day.webp");
+  background-image: url("./ressources/img/bg_day.webp");
   background-size: cover;
   background-position: left;
   height: 100%;
@@ -564,7 +564,7 @@ footer .link .github:hover {
   z-index: -1;
 }
 .bg .overlay-stars {
-  background: transparent url("/ressources/img/stars_2.png") repeat top center;
+  background: transparent url("./ressources/img/stars_2.png") repeat top center;
   bottom: 0;
   display: none;
   height: 20%;
@@ -636,7 +636,7 @@ footer .link .github:hover {
 .timer__heading {
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: url("/ressources/img/bg_day.webp");
+  background-image: url("./ressources/img/bg_day.webp");
   background-position: left;
   color: transparent;
   font-family: "Paytone One", sans-serif;
