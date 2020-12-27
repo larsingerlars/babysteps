@@ -112,7 +112,7 @@
 html {
   font-size: 50%;
   font-display: optional;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 @media (min-width: 43.75em) {
   html {
@@ -126,7 +126,7 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.5;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
   width: 100%;
 }
@@ -147,7 +147,8 @@ li {
 
 .birdcage {
   display: none;
-  height: 1000px;
+  height: 100%;
+  overflow: hidden;
   position: absolute;
   width: 100%;
   z-index: -1;
@@ -174,7 +175,7 @@ li {
 
 .pictureframe:nth-of-type(2) {
   animation: fly 28s 1s infinite linear;
-  height: 600px;
+  height: 300px;
 }
 @media (min-width: 43.75em) {
   .pictureframe:nth-of-type(2) {
@@ -194,7 +195,7 @@ li {
 
 .pictureframe:nth-of-type(4) {
   animation: fly 25s 3s infinite linear;
-  height: 800px;
+  height: 300px;
 }
 @media (min-width: 43.75em) {
   .pictureframe:nth-of-type(4) {

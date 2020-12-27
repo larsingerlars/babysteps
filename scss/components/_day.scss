@@ -1,6 +1,7 @@
 .birdcage {
   display: none;
-  height: 1000px;
+  height: 100%;
+  overflow: hidden;
   position: absolute;
   width: 100%;
   z-index: -1;
@@ -25,7 +26,7 @@
 
 .pictureframe:nth-of-type(2) {
   animation: fly 28s 1s infinite linear;
-  height: 600px;
+  height: 300px;
 
   @include respond(tab-port) {
     animation: fly 177s 2s infinite linear;
@@ -43,7 +44,7 @@
 
 .pictureframe:nth-of-type(4) {
   animation: fly 25s 3s infinite linear;
-  height: 800px;
+  height: 300px;
 
   @include respond(tab-port) {
     animation: fly 172s 2s infinite linear;
