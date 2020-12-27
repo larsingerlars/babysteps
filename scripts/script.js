@@ -8,6 +8,7 @@ const values = Array.from(timer);
 const valueText = document.querySelectorAll(".value");
 const unitText = document.querySelectorAll(".unit");
 const github = document.querySelector(".github");
+const footer = document.querySelector("footer");
 
 // COUNTDOWN VARIABLES
 const sec = 1000;
@@ -89,7 +90,8 @@ const changeColor = (time) => {
       bg.style.backgroundImage = `url("./ressources/img/bg_${img.night}.webp")`;
       heading.style.backgroundImage = `url("./ressources/img/bg_${img.night}.webp")`;
       showComponents(nightMode);
-      footer.style.color = "rgb(250,250,250)";
+      msg.style.color = "rgb(250,250,250)";
+      github.style.color = "rgb(250,250,250)";
       valueText.forEach((element) => {
         element.style.color = `${color.night}`;
       });
