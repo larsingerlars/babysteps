@@ -53,7 +53,7 @@ const detectLanguage = () => {
     unitText[3].textContent = "sekundes";
     msg.textContent = "Ar mīlestību taisīts";
   } else {
-    console.log("English version");
+    return;
   }
 };
 

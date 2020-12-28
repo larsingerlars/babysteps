@@ -1,6 +1,6 @@
 .bg {
   background-color: $skyblue;
-  background-image: url("./ressources/img/bg_day.webp");
+  background-image: url("../ressources/img/bg_day.webp");
   background-size: cover;
   background-position: left;
   height: 100vh;
@@ -9,8 +9,10 @@
   z-index: -1;
 
   .overlay-stars {
-    background: transparent url("./ressources/img/stars_2.png") repeat top
-      center;
+    background-image: url("../ressources/img/stars_2.png");
+    background-color: transparent;
+    background-position: top center;
+    background-repeat: repeat;
     bottom: 0;
     display: none;
     height: 20%;
@@ -21,7 +23,6 @@
     right: 0;
     top: 0;
     width: 70%;
-    z-index: -2;
 
     @include respond(tab-port) {
       height: 24%;
