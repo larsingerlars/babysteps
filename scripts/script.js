@@ -72,23 +72,23 @@ const showComponents = (componentList) => {
 const changeColor = (time) => {
   try {
     if (time >= 8 && time < 19) {
-      bg.style.backgroundImage = `url("./ressources/img/bg_${img.day}.webp")`;
-      heading.style.backgroundImage = `url("./ressources/img/bg_${img.day}.webp")
+      bg.style.backgroundImage = `url("./resources/img/bg_${img.day}.webp")`;
+      heading.style.backgroundImage = `url("./resources/img/bg_${img.day}.webp")
       `;
       showComponents(dayMode);
       valueText.forEach((element) => {
         element.style.color = `${color.day}`;
       });
     } else if (time > 5 && time < 8) {
-      bg.style.backgroundImage = `url("./ressources/img/bg_${img.morning}.webp")`;
-      heading.style.backgroundImage = `url("./ressources/img/bg_${img.morning}.webp")`;
+      bg.style.backgroundImage = `url("./resources/img/bg_${img.morning}.webp")`;
+      heading.style.backgroundImage = `url("./resources/img/bg_${img.morning}.webp")`;
       showComponents(morningMode);
       valueText.forEach((element) => {
         element.style.color = `${color.morning}`;
       });
     } else if (time >= 19 || time < 5) {
-      bg.style.backgroundImage = `url("./ressources/img/bg_${img.night}.webp")`;
-      heading.style.backgroundImage = `url("./ressources/img/bg_${img.night}.webp")`;
+      bg.style.backgroundImage = `url("./resources/img/bg_${img.night}.webp")`;
+      heading.style.backgroundImage = `url("./resources/img/bg_${img.night}.webp")`;
       showComponents(nightMode);
       msg.style.color = "rgb(250,250,250)";
       github.style.color = "rgb(250,250,250)";
