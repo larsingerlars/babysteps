@@ -23,29 +23,35 @@ const color = { morning: "#e07a51", day: "#44CCEE", night: "#0A1239" };
 // VARIABLES DAY-MODE
 const sun = document.querySelector(".sun_day");
 const birdCage = document.querySelector(".birdcage");
-const dayMode = [sun, birdCage];
 
 // VARIABLES NIGHT-MODE
 const moon = document.querySelector(".moonlight");
 const stars = document.querySelector(".overlay-stars");
 const owl = document.querySelector(".owl");
-const nightMode = [moon, stars, owl];
 
 // VARIABLES MORNING-MODE
 const sunrise = document.querySelector(".sunlight");
+
+// MODE ARRAYS
+const dayMode = [sun, birdCage];
 const morningMode = [sunrise, owl];
+const nightMode = [moon, stars, owl];
+
+// LANGUAGE CODES
+const GERMANY_LANGUAGE_CODE = "de-DE";
+const LATVIA_LANGUAGE_CODE = "lv-LV";
 
 // LANGUAGE DETECTION
 const detectLanguage = () => {
   const language = navigator.language;
-  if (language === "de-DE") {
+  if (language === GERMANY_LANGUAGE_CODE) {
     heading.textContent = "Auf dem Weg";
     unitText[0].textContent = "Tage";
     unitText[1].textContent = "Stunden";
     unitText[2].textContent = "Minuten";
     unitText[3].textContent = "Sekunden";
     msg.textContent = "Mit Liebe gemacht";
-  } else if (language === "lv-LV") {
+  } else if (language === LATVIA_LANGUAGE_CODE) {
     heading.textContent = "Gaidām mazulīti";
     unitText[0].textContent = "dienas";
     unitText[1].textContent = "stundas";
@@ -71,24 +77,27 @@ const showComponents = (componentList) => {
 
 const changeColor = (time) => {
   try {
-    if (time >= 8 && time < 19) {
-      bg.style.backgroundImage = `url("./ressources/img/bg_${img.day}.webp")`;
-      heading.style.backgroundImage = `url("./ressources/img/bg_${img.day}.webp")
-      `;
+    const isDay = time >= 8 && time < 19;
+    const isMorning = time > 5 && time < 8;
+    const isNight = time >= 19 || time < 5;
+
+    if (isDay) {
+      bg.style.backgroundImage = `url("./resources/img/bg_${img.day}.png")`;
+      heading.style.backgroundImage = `url("./resources/img/bg_${img.day}.png")`;
       showComponents(dayMode);
       valueText.forEach((element) => {
         element.style.color = `${color.day}`;
       });
-    } else if (time > 5 && time < 8) {
-      bg.style.backgroundImage = `url("./ressources/img/bg_${img.morning}.webp")`;
-      heading.style.backgroundImage = `url("./ressources/img/bg_${img.morning}.webp")`;
+    } else if (isMorning) {
+      bg.style.backgroundImage = `url("./resources/img/bg_${img.morning}.png")`;
+      heading.style.backgroundImage = `url("./resources/img/bg_${img.morning}.png")`;
       showComponents(morningMode);
       valueText.forEach((element) => {
         element.style.color = `${color.morning}`;
       });
-    } else if (time >= 19 || time < 5) {
-      bg.style.backgroundImage = `url("./ressources/img/bg_${img.night}.webp")`;
-      heading.style.backgroundImage = `url("./ressources/img/bg_${img.night}.webp")`;
+    } else if (isNight) {
+      bg.style.backgroundImage = `url("./resources/img/bg_${img.night}.png")`;
+      heading.style.backgroundImage = `url("./resources/img/bg_${img.night}.png")`;
       showComponents(nightMode);
       msg.style.color = "rgb(250,250,250)";
       github.style.color = "rgb(250,250,250)";

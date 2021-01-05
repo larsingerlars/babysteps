@@ -1,0 +1,60 @@
+@keyframes flap-r {
+  0%,
+  10% {
+    border-top-width: 60px;
+  }
+  40%,
+  60% {
+    border-top-width: 10px;
+  }
+  100% {
+    border-top-width: 60px;
+  }
+}
+
+@keyframes flap-l {
+  0% {
+    border-bottom-width: 0px;
+  }
+  40%,
+  60% {
+    border-bottom-width: 40px;
+  }
+  100% {
+    border-bottom-width: 0px;
+  }
+}
+
+@keyframes fly {
+  0% {
+    left: -50%;
+    top: 2%;
+    -webkit-transform: scale3d(0.5, 0.5, 1);
+  }
+  100% {
+    left: 1500%;
+    top: 3%;
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bob {
+  0% {
+    top: 25px;
+  }
+  50% {
+    top: 0px;
+  }
+  100% {
+    top: 25px;
+  }
+}
+
+@keyframes ray_anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
