@@ -583,6 +583,7 @@ footer .link .github:hover {
   font-size: 3rem;
   height: 100%;
   letter-spacing: 2px;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -590,6 +591,27 @@ footer .link .github:hover {
   .timer__heading {
     font-size: 5rem;
   }
+}
+
+.timer__message {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgba(68, 204, 238, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.timer__message > :nth-child(2) {
+  font-weight: 900;
+  margin: 2rem 0;
 }
 
 .timer__display {
@@ -730,14 +752,14 @@ footer .link .github:hover {
   display: none;
   position: absolute;
   left: 0;
-  top: -20%;
+  top: -25%;
   width: 10rem;
 }
 
 @media (min-width: 43.75em) {
   .details .owl {
     left: 0;
-    top: -51%;
+    top: -36%;
     width: auto;
   }
 }

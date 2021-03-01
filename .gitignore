@@ -1,0 +1,6 @@
+index.html
+package-lock.json
+gulpfile.js
+**/scripts/script.js
+node_modules/
+scss/
