@@ -1,6 +1,6 @@
 index_old.html
 package-lock.json
 gulpfile.js
-**/scripts/script.js
+**/scripts/script_old.js
 node_modules/
 scss/
