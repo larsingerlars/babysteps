@@ -1,3 +1,9 @@
+# old files
 index_old.html
 **/scripts/script_old.js
+
+# dependencies
 node_modules/
+
+# vscode settings
+.vscode

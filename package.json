@@ -1,30 +1,22 @@
 {
-  "name": "projekt_baby-countdown",
-  "version": "1.0.0",
-  "description": "Countdown project",
-  "main": "index.js",
-  "scripts": {
-    "watch:scss": "sass --watch scss/main.scss css/production.css",
-    "compile:scss": "sass scss/main.scss css/main.comp.css",
-    "concat:css": "concat -o css/main.concat.css css/icon-font.css css/main.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b \"last 10 version\" css/main.comp.css -o css/main.prefix.css",
-    "compress:css": "sass css/main.prefix.css css/main.min.css --style compressed",
-    "build:css": "npm-run-all compile:scss compress:css",
-    "minify:js": "uglifyjs scripts/script.js --compress --output scripts/script.min.js"
-  },
-  "author": "Lars",
-  "license": "ISC",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.48.0"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "not IE 11",
-    "maintained node versions"
-  ]
+    "name": "projekt_baby-countdown",
+    "version": "1.0.0",
+    "description": "Countdown project",
+    "main": "index.js",
+    "scripts": {},
+    "author": "Lars",
+    "license": "ISC",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.48.0"
+    },
+    "browserslist": [
+        "last 2 versions",
+        "not IE 11",
+        "maintained node versions"
+    ]
 }

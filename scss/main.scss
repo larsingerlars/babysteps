@@ -1,12 +1,15 @@
 @charset "UTF-8";
 
-@import "./mixins";
-@import "./variables";
-@import "./animations";
-@import "./basic";
-@import "./day";
-@import "./footer";
-@import "./home";
-@import "./morning";
-@import "./night";
-@import "./reset";
+@import './1-Basics/variables';
+@import './1-Basics/mixins';
+@import './1-Basics/basic';
+@import './1-Basics/animations';
+
+@import './2-Scenes/day';
+@import './2-Scenes/morning';
+@import './2-Scenes/night';
+
+@import './3-Components/box';
+@import './3-Components/footer';
+
+@import './4-Modes/dark-mode';
