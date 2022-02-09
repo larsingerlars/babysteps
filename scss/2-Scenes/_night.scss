@@ -1,134 +1,134 @@
 .details {
-  height: 100%;
-  position: absolute;
-  width: 100%;
-
-  .owl {
-    display: none;
+    height: 100%;
     position: absolute;
-    left: 0;
-    top: -25%;
-    width: 10rem;
+    width: 100%;
 
-    @include respond(tab-port) {
-      left: 0;
-      top: -36%;
-      width: auto;
+    .owl {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: -18%;
+        width: 10rem;
+
+        @include respond(tab-port) {
+            left: 0;
+            top: -39%;
+            width: auto;
+        }
     }
-  }
 }
 
 .moonlight {
-  background-color: rgb(255, 247, 173);
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 8.5rem 0.05rem rgba(255, 247, 173, 0.75);
-  box-shadow: 0 0 8.5rem 0.05rem rgba(255, 247, 173, 0.75);
-  display: none;
-  height: 10rem;
-  position: absolute;
-  right: 10%;
-  top: 5%;
-  width: 10rem;
-
-  .moon {
     background-color: rgb(255, 247, 173);
-    -webkit-clip-path: circle();
-    clip-path: circle();
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 8.5rem 0.05rem rgba(255, 247, 173, 0.75);
+    box-shadow: 0 0 8.5rem 0.05rem rgba(255, 247, 173, 0.75);
+    display: none;
     height: 10rem;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10%;
+    top: 5%;
     width: 10rem;
 
-    .crater {
-      background-color: rgb(233, 187, 106);
-      -webkit-clip-path: circle();
-      clip-path: circle();
-      position: absolute;
-    }
+    .moon {
+        background-color: rgb(255, 247, 173);
+        -webkit-clip-path: circle();
+        clip-path: circle();
+        height: 10rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10rem;
 
-    .crater:nth-of-type(1) {
-      height: 2.4rem;
-      width: 2.4rem;
-      top: 55%;
-      left: 45%;
-    }
+        .crater {
+            background-color: rgb(233, 187, 106);
+            -webkit-clip-path: circle();
+            clip-path: circle();
+            position: absolute;
+        }
 
-    .crater:nth-of-type(2) {
-      height: 1.8rem;
-      width: 1.8rem;
-      top: 18%;
-      left: 21%;
-    }
+        .crater:nth-of-type(1) {
+            height: 2.4rem;
+            width: 2.4rem;
+            top: 55%;
+            left: 45%;
+        }
 
-    .crater:nth-of-type(3) {
-      height: 1.4rem;
-      width: 1.4rem;
-      top: 16%;
-      right: 15%;
-    }
+        .crater:nth-of-type(2) {
+            height: 1.8rem;
+            width: 1.8rem;
+            top: 18%;
+            left: 21%;
+        }
 
-    .crater:nth-of-type(4) {
-      height: 1.1rem;
-      width: 1.1rem;
-      top: 72%;
-      left: 25%;
-    }
+        .crater:nth-of-type(3) {
+            height: 1.4rem;
+            width: 1.4rem;
+            top: 16%;
+            right: 15%;
+        }
 
-    .crater:nth-of-type(5) {
-      height: 0.8rem;
-      width: 0.8rem;
-      top: 52%;
-      left: 12%;
-    }
+        .crater:nth-of-type(4) {
+            height: 1.1rem;
+            width: 1.1rem;
+            top: 72%;
+            left: 25%;
+        }
 
-    .crater:nth-of-type(6) {
-      height: 0.7rem;
-      width: 0.7rem;
-      top: 45%;
-      right: 10%;
-    }
+        .crater:nth-of-type(5) {
+            height: 0.8rem;
+            width: 0.8rem;
+            top: 52%;
+            left: 12%;
+        }
 
-    .crater:nth-of-type(7) {
-      height: 0.6rem;
-      width: 0.6rem;
-      top: 72%;
-      right: 14%;
-    }
+        .crater:nth-of-type(6) {
+            height: 0.7rem;
+            width: 0.7rem;
+            top: 45%;
+            right: 10%;
+        }
 
-    .crater:nth-of-type(8) {
-      height: 0.5rem;
-      width: 0.5rem;
-      top: 5%;
-      left: 40%;
-    }
+        .crater:nth-of-type(7) {
+            height: 0.6rem;
+            width: 0.6rem;
+            top: 72%;
+            right: 14%;
+        }
 
-    .crater:nth-of-type(9) {
-      height: 0.7rem;
-      width: 0.7rem;
-      top: 35%;
-      left: 50%;
-    }
+        .crater:nth-of-type(8) {
+            height: 0.5rem;
+            width: 0.5rem;
+            top: 5%;
+            left: 40%;
+        }
 
-    .crater:nth-of-type(10) {
-      height: 0.4rem;
-      width: 0.4rem;
-      top: 87%;
-      left: 48%;
-    }
+        .crater:nth-of-type(9) {
+            height: 0.7rem;
+            width: 0.7rem;
+            top: 35%;
+            left: 50%;
+        }
 
-    .crater:nth-of-type(11) {
-      height: 0.8rem;
-      width: 0.8rem;
-      top: 11%;
-      left: 50%;
-    }
+        .crater:nth-of-type(10) {
+            height: 0.4rem;
+            width: 0.4rem;
+            top: 87%;
+            left: 48%;
+        }
 
-    .crater:nth-of-type(12) {
-      height: 0.6rem;
-      width: 0.6rem;
-      top: 45%;
-      left: 30%;
+        .crater:nth-of-type(11) {
+            height: 0.8rem;
+            width: 0.8rem;
+            top: 11%;
+            left: 50%;
+        }
+
+        .crater:nth-of-type(12) {
+            height: 0.6rem;
+            width: 0.6rem;
+            top: 45%;
+            left: 30%;
+        }
     }
-  }
 }

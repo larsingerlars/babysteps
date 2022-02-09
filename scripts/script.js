@@ -44,24 +44,38 @@ const nightMode = [moon, stars, owl]
 const GERMANY_LANGUAGE_CODE = 'de-DE'
 const LATVIA_LANGUAGE_CODE = 'lv-LV'
 
+const LOCALES = {
+    DE: {
+        heading: 'Es ist was es ist, sagt die Liebe',
+        message: 'Mit Liebe gemacht'
+    },
+    LV: {
+        heading: 'Ir kā ir. Teica mīlestība.',
+        message: 'Ar mīlestību taisīts'
+    }
+}
+
 // LANGUAGE DETECTION
 const detectLanguage = () => {
-    const language = navigator.language
-    if (language === GERMANY_LANGUAGE_CODE) {
-        heading.textContent = 'Es ist was es ist, sagt die Liebe'
-        msg.textContent = 'Mit Liebe gemacht'
-    } else if (language === LATVIA_LANGUAGE_CODE) {
-        heading.textContent = 'Ir kā ir. Teica mīlestība.'
-        msg.textContent = 'Ar mīlestību taisīts'
-    } else {
+    // navigator.language checks which language the client is using
+    if (
+        navigator.language !== GERMANY_LANGUAGE_CODE ||
+        navigator.language !== LATVIA_LANGUAGE_CODE
+    ) {
         return
+    } else if (navigator.language === GERMANY_LANGUAGE_CODE) {
+        heading.textContent = LOCALES.DE.heading
+        msg.textContent = LOCALES.DE.message
+    } else if (navigator.language === LATVIA_LANGUAGE_CODE) {
+        heading.textContent = LOCALES.LV.heading
+        msg.textContent = LOCALES.LV.message
     }
 }
 
 // TIME DETECTION
 const detectTime = () => {
     const currentTime = new Date().getHours()
-    changeColor(currentTime)
+    return changeColor(currentTime)
 }
 
 const showComponents = (componentList) => {
@@ -126,7 +140,7 @@ const updateCountdown = (timeDifference) => {
 }
 
 const runCountdown = () => {
-    countdownActive = setInterval(() => {
+    const countdownActive = setInterval(() => {
         const now = Date.now()
         const birthday = BIRTHDATE.getTime()
         const difference = now - birthday

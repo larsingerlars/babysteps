@@ -8,26 +8,29 @@
 
 html {
     font-size: 62.5%;
+    color-scheme: light;
+}
+
+html[data-theme='dark'] {
+    color-scheme: dark;
+}
+@supports not (color-scheme: dark) {
+    html[data-theme='dark'] {
+        background: #111;
+    }
 }
 
 body {
-    background: rgb(255, 255, 255);
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
-    font-display: optional;
     line-height: 1.5;
     min-height: 100vh;
-    overflow: hidden;
+    min-block-size: 100%;
+    // overflow: hidden;
 }
 
 a {
     text-decoration: none;
-}
-
-button {
-    border: none;
-    display: block;
-    outline: none;
 }
 
 li {
