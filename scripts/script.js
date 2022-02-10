@@ -1,5 +1,3 @@
-'use strict'
-
 // GLOBAL VARIABLES
 const bg = document.querySelector('.bg')
 const heading = document.querySelector('.timer__heading')
@@ -148,10 +146,61 @@ const runCountdown = () => {
     }, sec)
 }
 
+// BIRTHDAY EVENT
+const checkForDate = () => {
+    const timeEvent = new Date(...setTriggerDate())
+    const [timeEventDate, timeEventMonth] = [
+        timeEvent.getDate(),
+        timeEvent.getMonth()
+    ]
+
+    const today = new Date()
+    const [todayDate, todayMonth] = [today.getDate(), today.getMonth()]
+
+    if (timeEventMonth !== todayMonth || timeEventDate !== todayDate) {
+        return
+    } else {
+        // triggers every 5 minutes
+        const INTERVAL = 300_000
+        return callPartyTroop(triggerConfetti, INTERVAL)
+    }
+}
+
+const getDate = () => {}
+
+const getMonth = () => {}
+
+const setTriggerDate = () => {
+    const timeEvent = [2022, 01, 12]
+    return timeEvent
+}
+
+const callPartyTroop = (cb, interval) => {
+    setInterval(cb, interval)
+}
+
+// JS CONFETTI
+const jsConfetti = new JSConfetti()
+const jsConfettiConfig = {
+    emojis: ['✨', '🎉', '🎊', '🎈', '🎁', '👶🏻', '🎂'],
+    emojiSize: 100,
+    confettiNumber: 30,
+    confettiRadius: 1
+}
+const triggerConfetti = (config) => jsConfetti.addConfetti(config)
+
+const confettiButton = document.getElementById('confetti')
+
 // EVENT LISTENER
-document.addEventListener('load', detectLanguage())
-document.addEventListener('load', detectTime())
-window.addEventListener('load', runCountdown())
+
+document.addEventListener('load', detectLanguage)
+document.addEventListener('DOMContentLoaded', detectTime)
+window.addEventListener('load', runCountdown)
+window.addEventListener('load', checkForDate)
+
+confettiButton.addEventListener('click', () =>
+    triggerConfetti(jsConfettiConfig)
+)
 
 // const countdownTimer = () => {
 //   const config = {

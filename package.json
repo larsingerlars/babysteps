@@ -18,5 +18,8 @@
         "last 2 versions",
         "not IE 11",
         "maintained node versions"
-    ]
+    ],
+    "dependencies": {
+        "js-confetti": "^0.10.2"
+    }
 }
