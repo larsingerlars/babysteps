@@ -61,12 +61,14 @@
         transition-duration: 0.5s;
     }
 }
+
 .theme__toggle {
     --size: 4rem;
     --icon-fill: hsl(210 10% 30%);
     --icon-fill-hover: hsl(210 10% 15%);
     background: none;
     border: none;
+    display: none;
     padding: 0;
     inline-size: var(--size);
     block-size: var(--size);
@@ -80,17 +82,20 @@
     top: 0;
     margin: 2rem auto;
 }
+
 .theme__toggle > svg {
     inline-size: 100%;
     block-size: 100%;
     stroke-linecap: round;
 }
+
 [data-theme='dark'] .theme__toggle {
     --icon-fill: hsl(210 10% 70%);
     --icon-fill-hover: hsl(210 15% 90%);
 }
+
 @media (hover: none) {
-    .theme-toggle {
+    .theme__toggle {
         --size: 48px;
     }
 }

@@ -7,12 +7,12 @@
         display: none;
         position: absolute;
         left: 0;
-        top: -18%;
+        top: -15%;
         width: 10rem;
 
         @include respond(tab-port) {
             left: 0;
-            top: -39%;
+            top: -31%;
             width: auto;
         }
     }

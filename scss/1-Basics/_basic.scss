@@ -11,22 +11,20 @@ html {
     color-scheme: light;
 }
 
-html[data-theme='dark'] {
-    color-scheme: dark;
-}
-@supports not (color-scheme: dark) {
-    html[data-theme='dark'] {
-        background: #111;
-    }
-}
+// html[data-theme='dark'] {
+//     color-scheme: dark;
+// }
+// @supports not (color-scheme: dark) {
+//     html[data-theme='dark'] {
+//         background: #111;
+//     }
+// }
 
 body {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     line-height: 1.5;
     min-height: 100vh;
-    min-block-size: 100%;
-    // overflow: hidden;
 }
 
 a {

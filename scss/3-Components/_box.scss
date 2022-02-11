@@ -1,3 +1,7 @@
+[data-theme='dark'] .bg {
+    background-image: url('../resources/img/bg_night.png');
+}
+
 .bg {
     background-color: $skyblue;
     background-image: url('../resources/img/bg_day.png');
@@ -31,14 +35,13 @@
 }
 
 .container {
-    align-items: flex-end;
-
+    align-items: center;
     display: flex;
-    height: 90vh;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 90vh;
+    justify-content: flex-end;
     margin: 0 auto;
     padding: 1rem;
-    overflow: hidden;
     width: clamp(30rem, 90%, 35rem);
 
     @include respond(tab-port) {
@@ -62,7 +65,6 @@
     border-radius: 0.75rem;
     display: flex;
     flex-direction: column;
-    // height: max-content;
     justify-content: flex-start;
     margin-bottom: 6rem;
     padding-bottom: 2rem;
@@ -89,7 +91,6 @@
         color: transparent;
         font-family: 'Paytone One', sans-serif;
         font-size: 3rem;
-        height: 100%;
         letter-spacing: 2px;
         text-align: center;
         text-transform: uppercase;
@@ -184,4 +185,12 @@
             justify-content: center;
         }
     }
+}
+
+[data-theme='dark'] .value {
+    color: $nightblue;
+}
+
+[data-theme='dark'] .timer__message {
+    color: $nightblue;
 }

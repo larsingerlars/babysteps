@@ -15,6 +15,8 @@ const getColorPreference = () => {
     }
 }
 
+const theme = { value: getColorPreference() }
+
 const setColorPreference = () => {
     localStorage.setItem(config.STORAGE_KEY, theme.value)
     reflectColorPreference()
@@ -36,8 +38,6 @@ const onClick = () => {
 
     setColorPreference()
 }
-
-const theme = { value: getColorPreference() }
 
 window.onload = () => {
     reflectColorPreference()

@@ -2,8 +2,10 @@
     "name": "projekt_baby-countdown",
     "version": "1.0.0",
     "description": "Countdown project",
-    "main": "index.js",
-    "scripts": {},
+    "main": "script.js",
+    "scripts": {
+        "dev": "gulp build"
+    },
     "author": "Lars",
     "license": "ISC",
     "devDependencies": {

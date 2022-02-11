@@ -6,6 +6,7 @@ const msg = document.querySelector('.msg')
 const link = document.querySelector('.link')
 const values = Array.from(timer)
 const valueText = document.querySelectorAll('.value')
+const units = document.querySelectorAll('.unit')
 const github = document.querySelector('.github')
 const footer = document.querySelector('footer')
 
@@ -73,7 +74,7 @@ const detectLanguage = () => {
 // TIME DETECTION
 const detectTime = () => {
     const currentTime = new Date().getHours()
-    return changeColor(currentTime)
+    return switchScene(currentTime)
 }
 
 const showComponents = (componentList) => {
@@ -82,7 +83,7 @@ const showComponents = (componentList) => {
     })
 }
 
-const changeColor = (time) => {
+const switchScene = (time) => {
     try {
         const isDay = time >= 8 && time < 19
         const isMorning = time > 5 && time < 8
@@ -100,8 +101,9 @@ const changeColor = (time) => {
             bg.style.backgroundImage = `url("./resources/img/bg_${img.night}.png")`
             heading.style.backgroundImage = `url("./resources/img/bg_${img.night}.png")`
             showComponents(nightMode)
+            valueText.forEach((unit) => (unit.style.color = 'rgb(5, 13, 52)'))
             msg.style.color = 'rgb(250,250,250)'
-            github.style.color = 'rgb(250,250,250)'
+            github.style.fill = 'rgb(250,250,250)'
         }
     } catch (error) {
         console.log(error)
@@ -162,7 +164,7 @@ const checkForDate = () => {
     } else {
         // triggers every 5 minutes
         const INTERVAL = 300_000
-        return callPartyTroop(triggerConfetti, INTERVAL)
+        return callPartyTroop(triggerConfetti(jsConfettiConfig), INTERVAL)
     }
 }
 
@@ -182,10 +184,10 @@ const callPartyTroop = (cb, interval) => {
 // JS CONFETTI
 const jsConfetti = new JSConfetti()
 const jsConfettiConfig = {
-    emojis: ['✨', '🎉', '🎊', '🎈', '🎁', '👶🏻', '🎂'],
-    emojiSize: 100,
-    confettiNumber: 30,
-    confettiRadius: 1
+    emojis: ['✨', '🎉', '🎊', '🎈', '🎁', '🎂'],
+    emojiSize: 50,
+    confettiNumber: 25,
+    confettiRadius: 3
 }
 const triggerConfetti = (config) => jsConfetti.addConfetti(config)
 
