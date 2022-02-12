@@ -38,7 +38,6 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    min-height: 90vh;
     justify-content: flex-end;
     margin: 0 auto;
     padding: 1rem;
@@ -86,7 +85,7 @@
     &__heading {
         -webkit-background-clip: text;
         background-clip: text;
-        background-image: url('./resources/img/bg_day.png');
+        background-image: url('../resources/img/bg_day.png');
         background-position: left;
         color: transparent;
         font-family: 'Paytone One', sans-serif;

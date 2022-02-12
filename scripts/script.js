@@ -185,7 +185,7 @@ const callPartyTroop = (cb, interval) => {
 const jsConfetti = new JSConfetti()
 const jsConfettiConfig = {
     emojis: ['✨', '🎉', '🎊', '🎈', '🎁', '🎂'],
-    emojiSize: 50,
+    emojiSize: 100,
     confettiNumber: 25,
     confettiRadius: 3
 }
