@@ -655,6 +655,7 @@ li {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin: 0 auto;
+  height: 90vh;
   padding: 1rem;
   width: clamp(30rem, 90%, 35rem);
 }
