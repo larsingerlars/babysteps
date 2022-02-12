@@ -206,6 +206,7 @@ li {
 .birdcage {
   display: none;
   height: 50rem;
+  overflow: hidden;
   position: absolute;
   width: 100%;
   top: 15%;
@@ -492,13 +493,11 @@ li {
   display: none;
   position: absolute;
   left: 0;
-  top: -15%;
   width: 10rem;
 }
 @media (min-width: 43.75em) {
   .details .owl {
     left: 0;
-    top: -31%;
     width: auto;
   }
 }
@@ -613,7 +612,7 @@ li {
   background-image: url("../resources/img/bg_day.png");
   background-size: cover;
   background-position: left;
-  height: 100vh;
+  height: 120vh;
   position: absolute;
   width: 100%;
   z-index: -1;
@@ -655,7 +654,7 @@ li {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin: 0 auto;
-  height: 90vh;
+  height: 110vh;
   padding: 1rem;
   width: clamp(30rem, 90%, 35rem);
 }
