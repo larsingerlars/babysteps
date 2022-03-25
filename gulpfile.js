@@ -11,7 +11,6 @@ function css() {
         .src('./scss/main.scss')
         .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(cacheBust())
         .pipe(gulp.dest('./css/'))
 }
 
@@ -41,7 +40,7 @@ function cacheBust() {
     const urlJS = './scripts/script.js'
 
     return gulp
-        .src('index.html')
+        .src('./index.html')
         .pipe(replace(urlCSS, paramAdd(urlCSS)))
         .pipe(replace(urlJS, paramAdd(urlJS)))
         .pipe(gulp.dest('.'))

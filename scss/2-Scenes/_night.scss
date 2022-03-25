@@ -19,7 +19,8 @@
 }
 
 .moonlight {
-    background-color: rgb(255, 247, 173);
+    --clr-primary: rgb(255, 247, 173);
+    background-color: var(--clr-primary);
     border-radius: 50%;
     -webkit-box-shadow: 0 0 8.5rem 0.05rem rgba(255, 247, 173, 0.75);
     box-shadow: 0 0 8.5rem 0.05rem rgba(255, 247, 173, 0.75);
@@ -31,7 +32,7 @@
     width: 10rem;
 
     .moon {
-        background-color: rgb(255, 247, 173);
+        background-color: var(--clr-primary);
         -webkit-clip-path: circle();
         clip-path: circle();
         height: 10rem;

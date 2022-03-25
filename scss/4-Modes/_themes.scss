@@ -99,3 +99,7 @@
         --size: 48px;
     }
 }
+
+[data-theme='dark'] .bg {
+    background-image: url('../resources/img/bg_night.png');
+}

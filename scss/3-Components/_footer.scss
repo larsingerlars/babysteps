@@ -2,12 +2,14 @@ footer {
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 10vh;
+    gap: var(--grid-gap-size);
     justify-content: center;
+    margin-top: auto;
+    padding: 2rem 0;
     width: 100%;
 
     .msg {
-        color: rgba(37, 37, 37, 0.86);
+        color: var(--font-clr-dark);
         font-family: 'Paytone One', sans-serif;
         font-size: 1.6rem;
         font-weight: 300;
@@ -16,21 +18,15 @@ footer {
     }
 
     .link {
-        display: flex;
-        font-size: 4.5rem;
-        height: 100%;
-        justify-content: center;
-        margin-bottom: 4rem;
-        width: 100%;
+        svg {
+            --size: 3rem;
+            fill: currentColor;
+            height: var(--size);
+            width: var(--size);
 
-        .github {
-            fill: rgba(37, 37, 37, 0.86);
-            height: 3rem;
-            width: 3rem;
-        }
-
-        .github:hover {
-            filter: brightness(50%);
+            &:hover {
+                filter: brightness(50%);
+            }
         }
     }
 }

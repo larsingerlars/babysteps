@@ -1,0 +1,97 @@
+.timer {
+    --clr-primary: var(--font-clr-light);
+    background-color: var(--clr-primary);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    position: relative;
+    width: clamp(30rem, 80%, 60rem);
+    z-index: 10;
+
+    &__heading {
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: url('../resources/img/bg_day.png');
+        background-position: left;
+        color: transparent;
+        font-family: 'Paytone One', sans-serif;
+        font-size: clamp(3rem, 3rem + 2.5vw, 6rem);
+        letter-spacing: 2px;
+        margin: 2rem 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__display {
+        display: grid;
+        grid-template-areas: 'days' 'hours' 'minutes' 'seconds';
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+        height: 100%;
+        place-items: center;
+        width: 100%;
+
+        @include respond(tab-port) {
+            grid-template-areas: 'days hours minutes seconds';
+        }
+
+        > * {
+            --grid-column-size: 12rem;
+            align-items: stretch;
+            display: grid;
+            gap: var(--grid-gap-size);
+            grid-template-columns: repeat(2, var(--grid-column-size));
+            grid-template-areas: 'value unit';
+
+            @include respond(tab-port) {
+                --grid-column-size: 10rem;
+                --grid-gap-size: 0;
+                grid-template-areas: 'value' 'unit';
+                grid-template-columns: var(--grid-column-size);
+                justify-items: center;
+            }
+        }
+    }
+
+    &__days {
+        grid-area: days;
+    }
+
+    &__hours {
+        grid-area: hours;
+    }
+
+    &__minutes {
+        grid-area: minutes;
+    }
+
+    &__seconds {
+        grid-area: seconds;
+    }
+
+    .value,
+    .unit {
+        align-items: center;
+        display: flex;
+    }
+
+    .value {
+        --clr-primary: rgba(68, 204, 238, 0.75);
+        color: var(--clr-primary);
+        font-size: 5rem;
+        font-variant-numeric: tabular-nums lining-nums;
+        grid-area: value;
+        justify-content: center;
+    }
+
+    .unit {
+        font-size: 2rem;
+        grid-area: unit;
+        justify-content: flex-start;
+
+        @include respond(tab-port) {
+            justify-content: center;
+        }
+    }
+}
