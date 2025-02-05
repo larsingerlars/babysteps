@@ -1,0 +1,175 @@
+z-backstage {
+  display: block;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+
+  z-luminary {
+    display: none;
+
+    z-wrapper[scene="night"] & {
+      --clr-primary: rgb(255, 247, 173);
+      background-color: var(--clr-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 8.5rem 0.05rem rgba(255, 247, 173, 0.75);
+      display: block;
+      height: 10rem;
+      position: absolute;
+      right: 10%;
+      top: 5%;
+      width: 10rem;
+
+      z-moon {
+        background-color: inherit;
+        block-size: inherit;
+        clip-path: circle();
+        inline-size: inherit;
+        position: absolute;
+      }
+
+      z-crater {
+        background-color: #e9bb6a;
+        clip-path: circle();
+        position: absolute;
+
+        &:nth-of-type(1) {
+          height: 2.4rem;
+          left: 45%;
+          top: 55%;
+          width: 2.4rem;
+        }
+
+        &:nth-of-type(2) {
+          height: 1.8rem;
+          left: 21%;
+          top: 18%;
+          width: 1.8rem;
+        }
+
+        &:nth-of-type(3) {
+          height: 1.4rem;
+          right: 15%;
+          top: 16%;
+          width: 1.4rem;
+        }
+
+        &:nth-of-type(4) {
+          height: 1.1rem;
+          left: 25%;
+          top: 72%;
+          width: 1.1rem;
+        }
+
+        &:nth-of-type(5) {
+          height: 0.8rem;
+          left: 12%;
+          top: 52%;
+          width: 0.8rem;
+        }
+
+        &:nth-of-type(6) {
+          height: 0.7rem;
+          right: 10%;
+          top: 45%;
+          width: 0.7rem;
+        }
+
+        &:nth-of-type(7) {
+          height: 0.6rem;
+          right: 14%;
+          top: 72%;
+          width: 0.6rem;
+        }
+
+        &:nth-of-type(8) {
+          height: 0.5rem;
+          left: 40%;
+          top: 5%;
+          width: 0.5rem;
+        }
+
+        &:nth-of-type(9) {
+          height: 0.7rem;
+          left: 50%;
+          top: 35%;
+          width: 0.7rem;
+        }
+
+        &:nth-of-type(10) {
+          height: 0.4rem;
+          left: 48%;
+          top: 87%;
+          width: 0.4rem;
+        }
+
+        &:nth-of-type(11) {
+          height: 0.8rem;
+          left: 50%;
+          top: 11%;
+          width: 0.8rem;
+        }
+
+        &:nth-of-type(12) {
+          height: 0.6rem;
+          left: 30%;
+          top: 45%;
+          width: 0.6rem;
+        }
+      }
+    }
+  }
+
+  z-sun {
+    display: none;
+
+    z-wrapper[scene="day"] & {
+      background: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      box-shadow: 0 0 40px 15px rgba(255, 255, 255, 1);
+      display: block;
+      position: absolute;
+      right: 22%;
+      top: 10%;
+      width: min(7rem, 100%);
+
+      @include aspectRatio(1, 1);
+
+      z-rays {
+        // animation: rotate 120s linear infinite;
+        display: none;
+        inset: auto;
+        height: 100%;
+        position: absolute;
+        transform-origin: center;
+        width: inherit;
+
+        // span {
+        //   background: linear-gradient(
+        //     to bottom,
+        //     rgba(255, 255, 255, 0) 0%,
+        //     rgba(255, 255, 255, 0.8) 50%,
+        //     rgba(255, 255, 255, 0) 100%
+        //   );
+        //   border-radius: 80% 80% 0 0;
+        //   // margin-left: 16px;
+        //   height: 4rem;
+        //   opacity: 1;
+        //   position: absolute;
+        //   width: 0.5rem;
+        // }
+      }
+    }
+  }
+
+  z-birds {
+    display: none;
+
+    z-wrapper[scene="day"] & {
+      display: block;
+    }
+  }
+
+  z-bird {
+  }
+}

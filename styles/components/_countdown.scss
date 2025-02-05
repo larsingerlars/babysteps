@@ -1,0 +1,123 @@
+z-countdown {
+  $breakpoint: phone;
+  background-color: var(--clr-light);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  display: block;
+  margin-inline: auto;
+  padding: 1.5em;
+  position: relative;
+  width: min(700px, 100%);
+  z-index: 100;
+
+  z-wrapper[scene="morning"] &::before,
+  z-wrapper[scene="night"] &::before {
+    bottom: 100%;
+    background-image: url(/img/owl.png);
+    background-image: image-set(url(/img/owl.webp) 1x);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    left: 0;
+    position: absolute;
+
+    @include aspectRatio(1, 1);
+    @include clamp("width", 75, 150);
+  }
+
+  h1 {
+    background-clip: text;
+    background-image: var(--_scene-bg-fallback);
+    background-image: var(--_scene-bg);
+    background-position: left;
+    color: transparent;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    padding-inline: 1em;
+
+    span {
+      display: inline-block;
+    }
+
+    @supports (text-wrap: balance) {
+      text-wrap: balance;
+    }
+
+    @extend .t--up;
+    @extend .t--center;
+
+    @include clamp("font-size", 20, 46);
+  }
+
+  ul {
+    display: grid;
+    gap: 1em;
+    grid-template-areas: "days" "hours" "minutes" "seconds";
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    margin-inline: auto;
+    max-width: 90%;
+    width: 100%;
+
+    @include clamp("margin-block-start", 24, 48);
+
+    @include respond($breakpoint) {
+      grid-template-areas: "days hours minutes seconds";
+    }
+
+    li {
+      align-items: baseline;
+      display: grid;
+      gap: 0.5em;
+      grid-template-areas: "unit value";
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      @include respond($breakpoint) {
+        grid-template-areas: "unit" "value";
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      &[data-unit="days"] {
+        grid-area: days;
+      }
+
+      &[data-unit="hours"] {
+        grid-area: hours;
+      }
+
+      &[data-unit="minutes"] {
+        grid-area: minutes;
+      }
+
+      &[data-unit="seconds"] {
+        grid-area: seconds;
+      }
+
+      p:first-of-type {
+        color: var(--scene-clr-highlight);
+        font-variant-numeric: tabular-nums lining-nums;
+        grid-area: unit;
+        line-height: 1;
+        justify-self: end;
+
+        @include clamp("font-size", 24, 48);
+
+        @include respond($breakpoint) {
+          justify-self: center;
+        }
+      }
+
+      p:last-of-type {
+        grid-area: value;
+        justify-self: start;
+
+        @include respond($breakpoint) {
+          justify-self: center;
+        }
+
+        z-wrapper[scene="night"] & {
+          color: var(--scene-clr-highlight);
+        }
+      }
+    }
+  }
+}

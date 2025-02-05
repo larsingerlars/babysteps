@@ -1,0 +1,14 @@
+{
+  "en": {
+    "heading": ["Love says", " it is how it is"],
+    "footer": "Made with love"
+  },
+  "lv": {
+    "heading": ["Ir kā ir.", " Teica mīlestība."],
+    "footer": "Ar mīlestību taisīts"
+  },
+  "de": {
+    "heading": ["Es ist wie es ist,", " sagt die Liebe"],
+    "footer": "Mit Liebe gemacht"
+  }
+}
