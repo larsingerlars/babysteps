@@ -2,19 +2,6 @@
 
 @mixin aspectRatio($width, $height) {
   aspect-ratio: list.slash($width, $height);
-
-  @supports not (aspect-ratio: 1 / 1) {
-    &::before {
-      content: "";
-      float: left;
-      padding-top: calc(100% * #{$height} / #{$width});
-    }
-    &::after {
-      clear: both;
-      content: "";
-      display: block;
-    }
-  }
 }
 
 @mixin clamp($property, $min, $max, $value: 3.2) {
