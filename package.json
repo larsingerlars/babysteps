@@ -1,29 +1,21 @@
 {
-    "name": "projekt_baby-countdown",
-    "version": "1.0.0",
-    "description": "Countdown project",
-    "main": "script.js",
-    "scripts": {
-        "dev": "gulp build"
-    },
-    "author": "Lars",
-    "license": "ISC",
-    "devDependencies": {
-        "gulp": "^4.0.2",
-        "gulp-autoprefixer": "^8.0.0",
-        "gulp-clean-css": "^4.3.0",
-        "gulp-rename": "^2.0.0",
-        "gulp-replace": "^1.1.3",
-        "gulp-sass": "^5.1.0",
-        "luxon": "^2.3.0",
-        "sass": "^1.48.0"
-    },
-    "browserslist": [
-        "last 2 versions",
-        "not IE 11",
-        "maintained node versions"
-    ],
-    "dependencies": {
-        "js-confetti": "^0.10.2"
-    }
+  "name": "baby-countdown",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "tsc --noEmit && vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "js-confetti": "^0.13.1",
+    "vite": "^8.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "autoprefixer": "^10.6.1",
+    "sass": "^1.83.4",
+    "sharp": "^0.34.0",
+    "typescript": "^7.0.2",
+    "vite-plugin-image-optimizer": "^2.0.3"
+  }
 }

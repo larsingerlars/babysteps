@@ -1,0 +1,394 @@
+z-backstage {
+  display: block;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  font-size: calc(1rem * var(--scenery-scale));
+
+  z-luminary {
+    display: none;
+
+    z-wrapper[scene="day"] &,
+    z-wrapper[scene="night"] & {
+      display: block;
+    }
+
+    z-wrapper[scene="night"] & {
+      --clr-primary: rgb(255, 247, 173);
+      --moon-size: clamp(5em, 14vmin, 10em);
+
+      background-color: var(--clr-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 8.5em 0.05em rgba(255, 247, 173, 0.75);
+      display: block;
+      height: var(--moon-size);
+      position: absolute;
+      right: 1rem;
+      top: 4rem;
+      width: var(--moon-size);
+
+      @include respond(phone) {
+        right: 10%;
+        top: 5%;
+      }
+
+      z-moon {
+        background-color: inherit;
+        block-size: inherit;
+        clip-path: circle();
+        inline-size: inherit;
+        position: absolute;
+      }
+
+      z-crater {
+        background-color: #e9bb6a;
+        clip-path: circle();
+        position: absolute;
+
+        &:nth-of-type(1) {
+          height: 24%;
+          left: 45%;
+          top: 55%;
+          width: 24%;
+        }
+
+        &:nth-of-type(2) {
+          height: 18%;
+          left: 21%;
+          top: 18%;
+          width: 18%;
+        }
+
+        &:nth-of-type(3) {
+          height: 14%;
+          right: 15%;
+          top: 16%;
+          width: 14%;
+        }
+
+        &:nth-of-type(4) {
+          height: 11%;
+          left: 25%;
+          top: 72%;
+          width: 11%;
+        }
+
+        &:nth-of-type(5) {
+          height: 8%;
+          left: 12%;
+          top: 52%;
+          width: 8%;
+        }
+
+        &:nth-of-type(6) {
+          height: 7%;
+          right: 10%;
+          top: 45%;
+          width: 7%;
+        }
+
+        &:nth-of-type(7) {
+          height: 6%;
+          right: 14%;
+          top: 72%;
+          width: 6%;
+        }
+
+        &:nth-of-type(8) {
+          height: 5%;
+          left: 40%;
+          top: 5%;
+          width: 5%;
+        }
+
+        &:nth-of-type(9) {
+          height: 7%;
+          left: 50%;
+          top: 35%;
+          width: 7%;
+        }
+
+        &:nth-of-type(10) {
+          height: 4%;
+          left: 48%;
+          top: 87%;
+          width: 4%;
+        }
+
+        &:nth-of-type(11) {
+          height: 8%;
+          left: 50%;
+          top: 11%;
+          width: 8%;
+        }
+
+        &:nth-of-type(12) {
+          height: 6%;
+          left: 30%;
+          top: 45%;
+          width: 6%;
+        }
+      }
+    }
+  }
+
+  z-sun {
+    display: none;
+
+    z-wrapper[scene="day"] & {
+      background: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      box-shadow: 0 0 2.5em 0.9375em rgba(255, 255, 255, 1);
+      display: block;
+      position: absolute;
+      right: 22%;
+      top: 10%;
+      width: min(7em, 100%);
+
+      @include aspectRatio(1, 1);
+
+      z-rays {
+        animation: rotate 120s linear infinite;
+        display: block;
+        inset: auto;
+        height: 100%;
+        position: absolute;
+        transform-origin: center;
+        width: inherit;
+
+        @media (prefers-reduced-motion: reduce) {
+          animation: none;
+        }
+
+        span {
+          background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          border-radius: 80% 80% 0 0;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+        }
+
+        span:nth-child(odd) {
+          height: 4em;
+          margin: -2em 0 0 -0.35em;
+          width: 0.7em;
+        }
+
+        span:nth-child(even) {
+          height: 2.2em;
+          margin: -1.1em 0 0 -0.25em;
+          width: 0.5em;
+        }
+
+        @for $i from 1 through 10 {
+          span:nth-child(#{$i}) {
+            @if $i % 2 == 1 {
+              transform: rotate(#{($i - 1) * 36}deg) translateY(-5.5em);
+            } @else {
+              transform: rotate(#{($i - 1) * 36}deg) translateY(-4.6em);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  z-stars {
+    display: none;
+    inset: 0;
+    overflow: hidden;
+    position: absolute;
+
+    z-wrapper[scene="night"] & {
+      display: block;
+
+      @media (prefers-reduced-motion: reduce) {
+        display: none;
+      }
+    }
+  }
+
+  z-star {
+    animation: star-fall 13s linear infinite;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
+    height: 0.15em;
+    left: 70%;
+    position: absolute;
+    top: 8%;
+    width: 6em;
+
+    &:nth-child(1) {
+      animation-delay: -2s;
+    }
+
+    &:nth-child(2) {
+      animation-duration: 17s;
+      animation-delay: -9s;
+      left: 45%;
+      top: 18%;
+    }
+
+    &:nth-child(3) {
+      animation-duration: 21s;
+      animation-delay: -15s;
+      left: 85%;
+      top: 4%;
+    }
+
+    @keyframes star-fall {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(153.4deg);
+      }
+      4% {
+        opacity: 1;
+      }
+      8%,
+      100% {
+        opacity: 0;
+        transform: translate(-24em, 12em) rotate(153.4deg);
+      }
+    }
+  }
+
+  z-birds {
+    display: none;
+    position: relative;
+
+    z-wrapper[scene="day"] & {
+      display: block;
+      height: min(100vh, 50rem);
+      height: min(100dvh, 50rem);
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  z-route {
+    animation: fly 30s infinite linear;
+    display: block;
+    height: 3.125em;
+    position: absolute;
+    top: 12%;
+    width: 100%;
+
+    @include respond(tab-port) {
+      top: 21%;
+    }
+  }
+
+  z-bird {
+    animation: bob 0.7s infinite cubic-bezier(0.7, 0.7, 0.1, 0.4);
+    position: absolute;
+
+    span {
+      position: absolute;
+    }
+
+    span[head],
+    span[body],
+    span[wing-l],
+    span[wing-r] {
+      border-color: transparent;
+      border-style: solid;
+      height: 0px;
+      width: 0px;
+    }
+
+    span[head] {
+      border-width: 1.5em;
+      border-left-width: 2.5em;
+      border-top-width: 1.5em;
+      border-right-width: 5.5em;
+      border-top-color: #333;
+    }
+
+    span[body] {
+      border-width: 1em;
+      border-left-width: 0.5em;
+      border-top-width: 0px;
+      border-right-width: 1.5em;
+      border-bottom-color: #777;
+      bottom: 0em;
+      left: 5em;
+    }
+
+    span[wing-l] {
+      animation: flap-l 0.7s infinite;
+      border-width: 6em;
+      border-left-width: 2em;
+      border-top-width: 0em;
+      border-right-width: 0.6em;
+      border-bottom-color: #444;
+      bottom: 0em;
+      left: 2.2em;
+    }
+
+    span[wing-r] {
+      animation: flap-r 0.7s infinite;
+      border-width: 6em;
+      border-left-width: 2em;
+      border-bottom-width: 0em;
+      border-right-width: 0.6em;
+      border-top-color: #777;
+      left: 2.2em;
+      top: 0em;
+    }
+
+    @keyframes flap-r {
+      0%,
+      10% {
+        border-top-width: 3.75em;
+      }
+      40%,
+      60% {
+        border-top-width: 0.625em;
+      }
+      100% {
+        border-top-width: 3.75em;
+      }
+    }
+
+    @keyframes flap-l {
+      0% {
+        border-bottom-width: 0px;
+      }
+      40%,
+      60% {
+        border-bottom-width: 2.5em;
+      }
+      100% {
+        border-bottom-width: 0px;
+      }
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translateX(-50%) scale(0.5);
+      }
+      100% {
+        transform: translateX(200%) scale(1);
+      }
+    }
+
+    @keyframes bob {
+      0% {
+        transform: translateY(1.5625em);
+      }
+      50% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(1.5625em);
+      }
+    }
+  }
+}

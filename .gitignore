@@ -1,12 +1,21 @@
-# dev
-.plans/
+# build output
+dist/
 
 # dependencies
 node_modules/
 
-# vscode settings
-.vscode
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# build
-dist/
-build/
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# dev
+.plans/
