@@ -1,0 +1,75 @@
+@use "sass:list";
+
+@mixin aspectRatio($width, $height) {
+  aspect-ratio: list.slash($width, $height);
+}
+
+@mixin clamp($property, $min, $max, $value: 3.2) {
+  $value: calc($min / $value);
+  $min: calc($min / 16);
+  $max: calc($max / 16);
+
+  #{$property}: clamp(#{$min}rem, #{$value}vw, #{$max}rem);
+
+  @supports not (#{$property}: clamp(#{$min}rem, #{$value}vw, #{$max}rem)) {
+    #{$property}: min(max(#{$min}rem, #{$value}vw), #{$max}rem);
+  }
+}
+
+@mixin grid(
+  $grid-column-count: 2,
+  $min-width: 300px,
+  $column-gap: 32px,
+  $row-gap: 32px
+) {
+  $gap-count: calc($grid-column-count - 1);
+  $total-gap-width: calc($gap-count * $column-gap);
+  $grid-item--max-width: calc((100% - $total-gap-width) / $grid-column-count);
+  $grid-item--min-width: min(#{$min-width}, 100%);
+
+  display: grid;
+  gap: $row-gap $column-gap;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max($grid-item--min-width, $grid-item--max-width), 1fr)
+  );
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (min-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == twilight {
+    @media (min-width: 45em) {
+      // 720px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (min-width: 60em) {
+      // 960px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (min-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 87.5em) {
+      // 1400px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}

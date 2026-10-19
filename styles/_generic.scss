@@ -1,0 +1,23 @@
+button {
+  $breakpoint: tab-port;
+  background-color: var(--clr-light);
+  border-radius: var(--border-radius);
+  color: var(--clr-dark);
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: all 0.2s ease-in-out;
+
+  @include respond($breakpoint) {
+    padding: 1em 2em;
+  }
+
+  @include clamp("font-size", 10, 14);
+
+  &:hover {
+    background-color: hsl(0, 0%, 90%);
+  }
+
+  &:active {
+    transform: translateY(0.25rem);
+  }
+}
