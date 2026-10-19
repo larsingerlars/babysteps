@@ -1,9 +1,12 @@
-# old files
-index_old.html
-**/scripts/script_old.js
+# dev
+.plans/
 
 # dependencies
 node_modules/
 
 # vscode settings
 .vscode
+
+# build
+dist/
+build/
